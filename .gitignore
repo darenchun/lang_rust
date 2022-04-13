@@ -20,5 +20,5 @@ Cargo.lock
 
 # End of https://www.toptal.com/developers/gitignore/api/rust
 
-wasm
 # example from webassembly. not directly related to rust language itself. adding to ignore.
+wasm
