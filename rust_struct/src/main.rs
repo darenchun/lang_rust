@@ -47,7 +47,7 @@ fn main() {
     /* 기존의 인스턴스로부터 새 인스턴스 생성하기 */
     // 기 존재하는 인스턴스에서 몇 가지 필드의 값만 수저안 상태의 새 구조체 인스턴스가 필요한 경우 '구조체 갱신 문법'을 이용하면 편리하다.
 
-    let user2 = User {
+    let mut user2 = User {
         email: String::from("email2"),
         user_name : String::from("user2_name"),
         active : instance_of_user.active, // 문법 상 기존에 생성된 인스턴스들이 있다면, 해당 인스턴스들의 필드 값을 읽어 바로 할당을 할 수 있다.
@@ -55,11 +55,25 @@ fn main() {
     };
 
     // 아래는 아예 특정 인스턴스와 값의 차이가 없을 경우 활용할 수 있는 방법이다.
-    let user3 : User = User {
+    let mut user3 : User = User {
         email : String::from("email3"),
         user_name : String::from("user2_name"),
         ..instance_of_user // 나머지는 최초 인스턴스인 'instance_of_user'과 내용을 같이 하겠다는 의미가 된다.
     };
+
+    /*
+    튜플 구조체 : 필드의 이름이 없고 값만 존재하는 tuple과 유사한 형태의 구조체도 생성이 가능하다.
+    */
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+
+    /*
+    구조체의 소유권 : 구조체가 특정 변수나 다른 구조체의 값을 참조하여 그 값을 저장할 수 는 있으나, 
+    궁극적인 원본의 값이 의도적이지 않게 바뀌게 될 경우, 지금 사용하는 구조체의 필드 값이 의도적이지 않게 변하게 된다.
+    이러한 '참조 값을 할당'하는 경우의 관리를 'lifetime'이라고 하는데 차후 배우게 될 것이다. 
+    */
 
 
 }
