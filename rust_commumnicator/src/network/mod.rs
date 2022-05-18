@@ -1,2 +1,2 @@
 mod server;
-fn connect() {}
+pub fn connect() {}
