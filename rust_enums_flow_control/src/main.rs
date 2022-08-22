@@ -8,10 +8,11 @@ fn main() {
         V4, // -> these are called 'variant'
         V6,
     }
-
-    let four = IpAddrKind::V4;
+    let w = IpAddrKind::V4;
     let six = IpAddrKind::V6;
     /* 실제 열거형 인자(variant)를 활용한 함수의 사용 */
+
+
     route(IpAddrKind::V4);
     route(IpAddrKind::V6);
 
