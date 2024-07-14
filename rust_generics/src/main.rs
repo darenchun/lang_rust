@@ -67,7 +67,7 @@ struct Tuple<T> {
     second: T,
 }
 
-use std::ops::Add;
+use std::ops::{Add};
 
 use crate::traits::Max; // 더할 수 있다는 trait/ 특징을 적용시키기 위해 표준 라이브러리를 가져온다.
 
@@ -139,5 +139,12 @@ fn main() {
     println!("{}",p);
     println!("{:?}",p);
 
+    println!("{}",generic_type_return(10));
+    println!("{}",generic_type_return("something"));
+    println!("{}",generic_type_return('C'));
 
+}
+
+fn generic_type_return<Generic> (input : Generic) -> Generic {
+    return input;
 }
